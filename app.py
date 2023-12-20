@@ -1,7 +1,5 @@
-# main.py
 import sys
-from PyQt5.QtCore import QProcess  # Change the import statement
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import QProcess, Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QVBoxLayout, QWidget, QFileDialog
 
 class MainWindow(QMainWindow):
@@ -12,7 +10,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Simple Qt App")
 
         # Create and set up the QLabel
-        self.helloLabel = QLabel("Hello, Mary!", self)
+        self.helloLabel = QLabel("Hello", self)
         self.helloLabel.setAlignment(Qt.AlignCenter)
 
         # Create and set up the QPushButton
@@ -38,7 +36,7 @@ class MainWindow(QMainWindow):
             self.helloLabel.setText(f"Analysis started for file:\n{file_name}")
         else:
             # User canceled file selection
-            self.helloLabel.setText("Hello, Mary!")
+            self.helloLabel.setText("Hello")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
